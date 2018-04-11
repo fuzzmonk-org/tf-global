@@ -42,9 +42,9 @@ module "terraform-dev-vpc" {
   project = "dev-vpc"
 }
 
-module "terraform-test" {
+module "terraform-test-vpc" {
   source = "../tf-modules/terraform"
-  project = "test"
+  project = "test-vpc"
 }
 
 
