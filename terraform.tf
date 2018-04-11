@@ -23,23 +23,28 @@ provider "aws" {
 # this is required before you create any vpc's
 # create s3 buckets and dynamoDB tables for terraform state locking
 module "terraform-global" {
-  source = "../modules/terraform"
+  source = "../tf-modules/terraform"
   project = "global"
 }
 
 module "terraform-dev-apps" {
-  source = "../modules/terraform"
+  source = "../tf-modules/terraform"
   project = "dev-apps"
 }
 
 module "terraform-dev-data" {
-  source = "../modules/terraform"
+  source = "../tf-modules/terraform"
   project = "dev-data"
 }
 
 module "terraform-dev-vpc" {
-  source = "../modules/terraform"
+  source = "../tf-modules/terraform"
   project = "dev-vpc"
+}
+
+module "terraform-test" {
+  source = "../tf-modules/terraform"
+  project = "test"
 }
 
 
