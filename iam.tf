@@ -1,5 +1,5 @@
 resource "aws_iam_role" "cloudwatch_iam_role" {
-  name               = "cloudwatch_iam_role"
+  name = "cloudwatch_iam_role"
   assume_role_policy = <<EOF
 {
   "Version": "2012-10-17",
@@ -44,6 +44,6 @@ EOF
 }
 
 resource "aws_iam_role_policy_attachment" "AmazonEC2RoleforSSM" {
-    role       = "${aws_iam_role.cloudwatch_iam_role.id}"
+    role = "${aws_iam_role.cloudwatch_iam_role.id}"
     policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonEC2RoleforSSM"
 }

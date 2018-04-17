@@ -1,6 +1,5 @@
 # terraform{} does not accept interpolation, so everything has to be hard coded
 # don't forget that when you copy/paste this elsewhere!
-# for global, since there's a chicken/egg situation with the S3 backend, comment out the backend section below if you're starting from scratch
 terraform {
   required_version = ">= 0.11.0"
   backend "s3" {
@@ -40,6 +39,11 @@ module "terraform-dev-data" {
 module "terraform-dev-vpc" {
   source = "../tf-modules/terraform"
   project = "dev-vpc"
+}
+
+module "terraform-test-apps" {
+  source = "../tf-modules/terraform"
+  project = "test-apps"
 }
 
 module "terraform-test-vpc" {
